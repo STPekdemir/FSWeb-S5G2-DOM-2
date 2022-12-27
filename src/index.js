@@ -1,6 +1,7 @@
 import "./less/index.less";
 
 // keydown event
+
 let time = 0;
 setInterval(function () {
   time += 1000;
@@ -9,9 +10,11 @@ setInterval(function () {
   }
 }, 1000);
 document.addEventListener("keydown", () => (time = 0));
+
 // sayfada 20 saniye hiçbir tuşa basmadan durulursa çalışır bir tuşa basıldığında sıfırlanır. Çalıştığında alert içerisinde bir string verir.
 
 //wheel event
+
 let image = document.querySelectorAll("img");
 image.forEach(function (img) {
   img.addEventListener(
@@ -26,12 +29,48 @@ image.forEach(function (img) {
     true
   );
 });
+
 // resilere zoom yapar.
+
 // load event
+
 window.addEventListener("load", function () {
   document.body.style.backgroundColor = "red";
   setTimeout(function () {
     document.body.style.backgroundColor = "";
+  }, 1000);
+});
+
+// sayfa yüklendiğinde 2 saniyeliğine arka plan rengini kırmızı yapar
+
+//mouseover event
+
+let paragraf = document.querySelectorAll("p");
+paragraf.forEach(function (p) {
+  p.addEventListener("mouseover", function () {
+    p.style.fontSize = "2em";
+  });
+  p.addEventListener("mouseout", function () {
+    p.style.fontSize = "";
+  });
+});
+
+// paragraf elementleri üzerine gelindiğinde büyütür üzerinden çekilindiğinde normal haline geri döner
+
+//focus event
+//resize event
+//scroll event
+//select event
+
+//dblclick event
+
+document.addEventListener("dblclick", () => {
+  document.body.style.animation = "dblClick 5s infinite";
+  setTimeout(() => {
+    document.body.style.animation = "";
   }, 5000);
 });
-//mouse over event
+
+// arka planın 5 saniye sarı olmasını sağlar
+
+//drag / drop event
